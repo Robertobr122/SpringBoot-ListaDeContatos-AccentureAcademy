@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Contatos</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Contatos</h1>
+        <a href="/contatos/novo" class="btn btn-primary">Novo Contato</a>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="contato : ${contatos}">
+                    <td th:text="${contato.id}"></td>
+                    <td th:text="${contato.nome}"></td>
+                    <td th:text="${contato.email}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
